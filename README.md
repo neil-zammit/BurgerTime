@@ -1,5 +1,6 @@
 # BurgerTime
 A static landing page for a fictional restaurant
+
 Credits:
 
 I do not own any of the images used. 
