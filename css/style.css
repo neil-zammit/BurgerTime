@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
+
+/* Global  */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #ffdd00;
+  transition: 0.6s;
+}
+
+.btn {
+  border: 1px solid #000;
+  background-color: #000;
+}
+
+.btn:hover {
+  border-color: #ffdd00;
+  transition: 0.6s;
+}
+
+.btn-md {
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Showcase */
+#showcase {
+  background: url(../img/showcase-bg.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Navbar */
+.showcase-nav-sm {
+  display: none;
+}
+
+.showcase-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.showcase-nav a {
+  margin: 3rem;
+  font-size: 1.2rem;
+}
+
+/* Showcase Main */
+.showcase-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.showcase-main h1 {
+  margin-top: 100px;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+
+/* Menu */
+#menu {
+  text-align: center;
+  margin-top: 4rem;
+  padding-bottom: 7rem;
+  height: 100%;
+}
+
+/* Menu Items */
+
+.menu-container {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem 5rem;
+  justify-items: start;
+}
+
+.menu-item:hover {
+  color: #ffdd00;
+}
+
+.item-icons {
+  display: flex;
+  justify-self: center;
+}
+
+.item-icons i {
+  margin-right: 1.4rem;
+}
+
+.item-ingredients {
+  display: flex; /* Uniform left alignment for all ingredient text */
+  width: 100%;
+}
+
+/* About*/
+#about {
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: left;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 90vh;
+  display: block; /* otherwise, a small whitespace is produced at the bottom of the image */
+}
+
+.about-text {
+  margin-top: 8rem;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.about-text p {
+  font-size: 1.4rem;
+  margin-bottom: 6rem;
+}
+
+/* Reservations */
+#reservations {
+  text-align: center;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 7rem;
+  margin-top: 6rem;
+  margin-bottom: 9rem;
+}
+
+.reservations-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  opacity: 0.4;
+}
+
+.reservations-container h1 {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+/* Footer */
+#footer {
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icons i {
+  margin-right: 1rem;
+  padding: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 910px) {
+  /* Navbar */
+  .hide-on-small {
+    display: none;
+  }
+
+  .showcase-nav-sm {
+    display: flex;
+    text-align: left;
+    align-items: center; /* so that both logo and menu are on same line horizontally */
+    background-color: #000;
+    padding-bottom: 0.2rem;
+  }
+
+  .logo-sm {
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    margin-left: 1rem;
+  }
+
+  .menu-btn {
+    margin-right: 1.4rem;
+    transition: all 0.5s ease-out;
+    z-index: 2; /* so btn is always on top of dropdown menu */
+  }
+
+  .menu-btn:hover {
+    cursor: pointer;
+  }
+
+  .menu-line {
+    width: 28px;
+    height: 4px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+    align-self: right;
+  }
+
+  /* Dropdown Menu Functionality Classes */
+  .menu-btn.close {
+    transform: rotate(180deg);
+    position: fixed;
+    margin-left: 93%;
+  }
+
+  .line1.close {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .line2.close {
+    opacity: 0; /* hide line */
+  }
+
+  .line3.close {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Menu Overlay */
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    background-color: #000;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .dropdown-menu.show {
+    visibility: visible;
+  }
+
+  .dropdown-menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-item {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  /* Showcase */
+  #showcase {
+    background: url(../img/showcase-bg.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+  }
+
+  /* Showcase Main */
+  .showcase-main {
+    display: block;
+  }
+
+  .showcase-main h1 {
+    margin-top: 100px;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+  }
+
+  /* Menu */
+  #menu {
+    text-align: center;
+    margin-top: 4rem;
+    padding-bottom: 7rem;
+    height: 100%;
+  }
+
+  /* Menu Items */
+
+  .menu-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    /* padding: 0; */
+    align-items: center;
+  }
+
+  .item-icons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-item:hover {
+    color: #ffdd00;
+  }
+
+  .item-icons {
+    display: flex;
+    justify-self: center;
+  }
+
+  .item-icons i {
+    margin-right: 1.4rem;
+    /* width: 70%; */
+  }
+
+  .item-ingredients {
+    display: flex; /* Uniform left alignment for all ingredient text */
+    width: 70%; /* for better alignment */
+  }
+
+  /* About */
+  #about {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: left;
+  }
+
+  .about-container {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 90vh;
+    display: block; /* otherwise, a small whitespace is produced at the bottom of the image */
+  }
+
+  .about-text {
+    margin-top: 8rem;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-text p {
+    font-size: 1.4rem;
+    margin-bottom: 6rem;
+  }
+}
